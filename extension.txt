@@ -1,0 +1,27 @@
+// file est le répertoire (nsIFile)
+function nomsfichiers(nsIFile){
+var entries = file.directoryEntries;
+var array = [];
+while(entries.hasMoreElements())
+{
+  var entry = entries.getNext();
+  entry.QueryInterface(Components.interfaces.nsIFile);
+  array.push(entry);
+}
+return array;
+}
+
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
+function extension(fileName){
+	var extension = "";
+	chaine = fileName;
+	extension = chaine.substring(chaine.lastIndexOf(".")+1); 
+	return extension;	
+}
+
+
+
+
+
